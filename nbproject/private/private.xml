@@ -3,8 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/antho/Desktop/IUT/chassePeche/chassepeche/src/controller/FXMLDocumentController.java</file>
-            <file>file:/C:/Users/antho/Desktop/IUT/chassePeche/chassepeche/src/vue/FXMLDocument.fxml</file>
+            <file>file:/D:/Workspace/Info/2emeA/Java_FXML/chassepeche/src/vue/Contenu.fxml</file>
+            <file>file:/D:/Workspace/Info/2emeA/Java_FXML/chassepeche/src/controller/ControllerAccueil.java</file>
+            <file>file:/D:/Workspace/Info/2emeA/Java_FXML/chassepeche/src/vue/Accueil.fxml</file>
+            <file>file:/D:/Workspace/Info/2emeA/Java_FXML/chassepeche/src/controller/ControllerContenu.java</file>
+            <file>file:/D:/Workspace/Info/2emeA/Java_FXML/chassepeche/src/chassepecheettradition/ChassePecheEtTradition.java</file>
         </group>
     </open-files>
 </project-private>
