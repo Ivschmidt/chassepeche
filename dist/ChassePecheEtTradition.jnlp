@@ -8,11 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-<<<<<<< HEAD
-    <jar href="ChassePecheEtTradition.jar" size="4451" download="eager" />
-=======
-    <jar href="ChassePecheEtTradition.jar" size="4287" download="eager" />
->>>>>>> 7ed17908d1c2d678f8ef1a2a17a32e53fa72e905
+    <jar href="ChassePecheEtTradition.jar" size="4748" download="eager" />
   </resources>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="ChassePecheEtTradition" >
     <param name="requiredFXVersion" value="8.0+"/>
