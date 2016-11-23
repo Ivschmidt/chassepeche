@@ -1,9 +1,5 @@
 /*
-<<<<<<< HEAD
  * Copyright (c) 2006, 2016, Oracle and/or its affiliates. All rights reserved.
-=======
- * Copyright (c) 2006, 2015, Oracle and/or its affiliates. All rights reserved.
->>>>>>> 7ed17908d1c2d678f8ef1a2a17a32e53fa72e905
  * ORACLE PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
  */
 
@@ -216,7 +212,6 @@ var dtjava = function() {
            }
         }
 
-<<<<<<< HEAD
         // startsWith() is not supported by IE
         if(typeof String.prototype.startsWith !== 'function') {
            String.prototype.startsWith = function(searchString, position) {
@@ -226,8 +221,6 @@ var dtjava = function() {
         }
 
 
-=======
->>>>>>> 7ed17908d1c2d678f8ef1a2a17a32e53fa72e905
         // Check mime types. Works with netscape family browsers and checks latest installed plugin only
         var mm = navigator.mimeTypes;
         var jre = null;
@@ -272,13 +265,8 @@ var dtjava = function() {
         }
 		
         return {haveDom:dom, wk:webkit, ie:ie, win:windows,
-<<<<<<< HEAD
                 linux:linux, mac:mac, op: opera, chrome:chrome, edge:edge,
                 jre:jre, deploy:deploy, fx:fx, noPluginWebBrowser:noPluginWebBrowser,
-=======
-                linux:linux, mac:mac, op: opera, chrome:chrome,
-                jre:jre, deploy:deploy, fx:fx,
->>>>>>> 7ed17908d1c2d678f8ef1a2a17a32e53fa72e905
                 cputype: cputype, osVersion: osVersion, override: override};
     }
 
@@ -1132,7 +1120,6 @@ var dtjava = function() {
     var Version = function(VersionString, UpgradeFromOldJavaVersion) {
         if (typeof UpgradeFromOldJavaVersion === 'undefined') {
             var UpgradeFromOldJavaVersion = true;
-<<<<<<< HEAD
         }
 
         // Constants
@@ -1154,29 +1141,6 @@ var dtjava = function() {
         if (!VersionString) {
             return null;
         }
-=======
-        }
-
-        // Constants
-        var MAX_DIGITS = 4;
-
-        // Private
-        var FVersionString = null;
-        var FOld = false;
-        var FVersion = null;
-        var FBuild = null;
-        var FPre = null;
-        var FMatch = null;
-        var FMajor = null;
-        var FMinor = null;
-        var FSecurity = null;
-        var FPatch = null;
-
-        // Class constructor
-        if (!VersionString) {
-            return null;
-        }
->>>>>>> 7ed17908d1c2d678f8ef1a2a17a32e53fa72e905
         else {
             FVersionString = VersionString;
             var v = parseAndSplitVersionString(VersionString, UpgradeFromOldJavaVersion)
@@ -1938,7 +1902,6 @@ var dtjava = function() {
 
     // This is similar to version check rules except there is a range
     // over versions (3-7) that are not valid.
-<<<<<<< HEAD
     //
     // JavaFX version requirements are always treated as "not earlier than this update".
     // I.e. we expect
@@ -1955,15 +1918,6 @@ var dtjava = function() {
             q = new Version(query + "+", false);
         }
 
-=======
-    function versionCheckFX(query, version) {
-        var q = new Version(query, false);
-
-        if (parseInt(q.major) >= 3 && parseInt(q.major) <= 7) {
-            return false;
-        }
-
->>>>>>> 7ed17908d1c2d678f8ef1a2a17a32e53fa72e905
         var v = new Version(version, false);
 
         return v.check(q);
@@ -2241,11 +2195,7 @@ var dtjava = function() {
                     platform: platform});
         } else {
             //if all looks good check JRE again, it could be false positive
-<<<<<<< HEAD
             if (ua.override == false && !noPluginWebBrowser && !doublecheckJrePresence()) {
-=======
-            if (ua.override == false && !doublecheckJrePresence()) {
->>>>>>> 7ed17908d1c2d678f8ef1a2a17a32e53fa72e905
                return new PlatformMismatchEvent(
                  {fx: fx, jre: "none", relaunch: restart, os: os,
                      browser: browser, platform: platform});
@@ -2512,224 +2462,10 @@ var dtjava = function() {
 
         var codes, status;
         if (isMissingComponent(s)) { //otherwise nothing to install
-<<<<<<< HEAD
             if (s.jre != "ok") {
                 if (isDef(cb.onInstallStarted)) {
                     cb.onInstallStarted(placeholder, "Java",
                                         false, getPlugin() != null);
-=======
-            if (s.canAutoInstall()) {
-                var p = getPlugin();
-                //helper function to launch FX installer
-                var installFX = function() {
-                    var handleResultFX = function(cd) {
-                        //return codes from DT (JREInstall.h) where BASE is 10000:
-                        //  #define INSTALL_ERR_SUCCESS  BASE+0
-                        //  #define INSTALL_ERR_STARTED  BASE+1
-                        //  #define INSTALL_ERR_DOWNLOAD BASE+2
-                        //  #define INSTALL_ERR_VALIDATE BASE+3
-                        //  #define INSTALL_ERR_EXEC     4
-                        //  #define INSTALL_ERR_PLATFORM BASE+5
-                        //  #define INSTALL_ERR_SYSTEM   BASE+6
-                        //  #define INSTALL_ERR_USER_CANCEL BASE+7
-                        if (cd == 10000+1) { //skip start notification
-                           return;
-                        }
-                        codes = ["success", "ignore", "error:download", "error:generic",
-                            "error:generic", "error:generic", "error:generic", "error:cancelled"];
-                        if (cd > 19900) {
-                            //we got process exit code (20000 + code) and it is not good
-                            //for now treat everything as same error
-                            if (cd == 20000 + 1602 || cd === 20000 - 2) {
-                                //-2 is exit code for welcome panel
-                                //1602 is MSI exit code for user cancel
-                                status = "error:cancelled";
-                            } else {
-                                status = "error:generic";
-                            }
-                        } else if (cd >= 10000 && cd <= 19900) {
-                            //this is DT error case
-                            status = (cd >= 10000 && cd < 10000+codes.length) ?
-                                codes[cd-10000] : "error:unknown";
-                        } else {
-                            //Generally we do not expect codes in this range
-                            // unless it is old DT?
-                            //JRE7 DT will return 1 for any error
-                            status = "error:generic";
-                        }
-                        if (isDef(cb.onInstallFinished)) {
-                            cb.onInstallFinished(placeholder, "javafx",
-                                                 status, s.isRelaunchNeeded());
-                        }
-                        if (cd == 0) { //proceed on success only
-                            if (notNull(postInstallFunc)) {
-                                postInstallFunc();
-                            }
-                        }
-                    }
-                    //TODO: hook install progress callback once installer support it
-                    if (isDef(cb.onInstallStarted)) {
-                        cb.onInstallStarted(placeholder, "JavaFX",
-                        //need to restart as DT plugin is used for sure ..
-                        //TODO: restart not needed if can detect FX version
-                        //  (if DT does not know how to detect then
-                        //   need to restart)
-                        // NOte - for launchable apps it is different!
-                                            true, true);
-                    }
-                    var ret = 0;
-                    try {
-                       //try new way (callbacks first)
-                       ret = p.installJavaFX(platform.javafx, handleResultFX);
-                    } catch (ee) { //in IE it will throw exception,
-                                   //in FF/Chrome will return 0
-                        ret = 0;
-                    }
-                    if (ret == 0) { //failed to call installJavaFX with 2 args
-                           // or we called it but it did nothing (returned -1)
-                           // => will try to use JRE7 API (one arg and no callbacks)
-                           ret = p.installJavaFX(platform.javafx);
-                           setTimeout(function() {
-                               //ret will be boolean here
-                               setTimeout(function() {handleResultFX(ret ? 1:0)}, 0);
-                           }, 0);
-                    }
-                }
-                if (s.jre != "ok" || canJavaFXCoBundleSatisfy(platform)) {
-                    //TODO: hook install progress callback once installer support it
-                    //NB: we use setTimeout here to make sure main thread
-                    //    will get control before we stuck in the call to launch installer
-                    //    This way UI can be updated.
-                    setTimeout(function() {
-                        var handleResultJRE = function(cc) {
-                            if (cc == 10000+1) { //skip start notification
-                              return;
-                            }
-                            if (cc > 19900) {
-                               //we got process exit code (20000 + code) and it is not good
-                               //for now treat everything as same error
-                               //TODO: separate user cancel event
-                               status = "error:generic";
-                            } else if (cc == -1) {
-                               status = "error:generic";
-                            } else if (cc > 10000) { //DT error
-                               status = "error:generic";
-                            } else if (cc == 0) {
-                                status = "success";
-                            } else {
-                                status = "error:generic"; //just in case
-                            }
-                            if (isDef(cb.onInstallFinished)) {
-                               cb.onInstallFinished(placeholder, "jre",
-                                               status, s.isRelaunchNeeded());
-                            }
-                            //may also need to launch FX install but only on success!
-                            if (cc == 0) {
-                                //revalidate, if it was cobundle install there is a chance we are good by now
-                                s = doValidate(platform);
-                                if (s != null && s.jre == "ok" && !noFXAutoInstall && s.fx != "ok" ) {
-                                    setTimeout(installFX, 0);
-                                } else {
-                                    //nothing more to install => call postInstallFunction
-                                    if (postInstallFunc != null) {
-                                        postInstallFunc();
-                                    }
-                                }
-                            }
-                        }
-                        if (isDef(cb.onInstallStarted)) {
-                            cb.onInstallStarted(placeholder, "Java",
-                                                true, true);
-                        }
-
-                        var ret = 0;
-
-                        try {
-                           // pass in javafx requirement and see if we can
-                           // install a co-bundle that satisfy the application
-                           // requirement
-                           ret = p.installJRE(platform.jvm, platform.javafx,
-                                    handleResultJRE);
-                        } catch (ee) { //in IE it will throw exception,
-                                       //in FF/Chrome will return 0
-                            ret = 0;
-                        }
-
-                        if (ret == 0) {
-
-                            var jvm_req = platform.jvm;
-
-                            if (s.fx != "ok" && canJavaFXCoBundleSatisfy(platform)) {
-                                // We would like to avoid standalone JavaFX
-                                // Runtime install if possible (unless app
-                                // requires JRE 6*)
-                                //
-                                // Starting in 7u6 - JavaFX runtime is co-bundle
-                                // inside JRE.
-                                // So if we need to install JavaFX, and the
-                                // application platform requirement can allow
-                                // JRE 7u6+ and FX 2.2+, we will try to increase
-                                // the minimum platform requirement to 7u6
-                                // to install co-bundle JRE, which should
-                                // satisfy the application requirement and avoid
-                                // standalone JavaFX install
-                                //
-                                // override java and javafx version requirement to latest
-                                // co-bundle
-                                jvm_req = minJRECobundleVersion;
-                                if (platform.jvm.indexOf('*') != -1) {
-                                    jvm_req += "*";
-                                } else if (platform.jvm.indexOf('+') != -1) {
-                                    jvm_req += "+";
-                                }
-                            }
-
-                            try {
-                                //since 7-client/FX2.0 installJRE may take additional
-                                // callback argument.
-                                ret = p.installJRE(jvm_req, handleResultJRE);
-                            } catch (ee) { //in IE it will throw exception,
-                                //in FF/Chrome will return 0
-                                ret = 0;
-                            }
-
-                            if (ret == 0) {
-                               // //failed to call installRE
-                               // or we called it but it did nothing (returned -1)
-                               // => will try to use old API (one arg and no callbacks)
-                               try {
-                                  ret = p.installJRE(jvm_req);
-                               } catch (ee) {
-                                   ret = 0; //just in case we got exception
-                               }
-                               setTimeout(function() {
-                                   setTimeout(function() {handleResultJRE(ret)}, 0);
-                               }, 0);
-                            }
-                        }
-                    }, 0);
-                } else if (!noFXAutoInstall && s.fx != "ok") {
-                    setTimeout(installFX, 0);
-                }
-            } else {
-                //auto install not possible => can only do manual install
-                //
-                //Start from JRE install first, even if it is JavaFX case but cobundle can help
-                if (s.jre != "ok" || canJavaFXCoBundleSatisfy(platform)) {
-                    if (isDef(cb.onInstallStarted)) {
-                        cb.onInstallStarted(placeholder, "Java",
-                                            false, getPlugin() != null);
-                    }
-                    startManualJREInstall();
-                } else if (s.fx != "ok") {
-                    if (isDef(cb.onInstallStarted)) {
-                        cb.onInstallStarted(placeholder, "JavaFX",
-                                            false, getPlugin() != null);
-                    }
-                    startManualFXInstall();
-                } else { //what it could be??
-                  reportPlatformError(app, s, cb);
->>>>>>> 7ed17908d1c2d678f8ef1a2a17a32e53fa72e905
                 }
                 startManualJREInstall();
             } else { //what it could be??
