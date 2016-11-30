@@ -3,11 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/antho/Desktop/chassePeche/chassepeche/src/vue/userControlAccueil.fxml</file>
             <file>file:/C:/Users/antho/Desktop/chassePeche/chassepeche/src/chassepecheettradition/ChassePecheEtTradition.java</file>
             <file>file:/C:/Users/antho/Desktop/chassePeche/chassepeche/src/vue/ControlUCAccueil.java</file>
             <file>file:/C:/Users/antho/Desktop/chassePeche/chassepeche/src/controller/ControllerAccueil.java</file>
             <file>file:/C:/Users/antho/Desktop/chassePeche/chassepeche/src/vue/Accueil.fxml</file>
+=======
+            <file>file:/D:/Workspace/Info/2emeA/Java_FXML/chassepeche/src/Metier/GibierPlume.java</file>
+            <file>file:/D:/Workspace/Info/2emeA/Java_FXML/chassepeche/src/Metier/Poisson.java</file>
+            <file>file:/D:/Workspace/Info/2emeA/Java_FXML/chassepeche/src/Metier/GibierPoil.java</file>
+>>>>>>> 9f913810d6c26dd8036b9db9a0740a98969204e4
         </group>
     </open-files>
 </project-private>
