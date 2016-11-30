@@ -5,30 +5,18 @@
  */
 package Metier;
 
+import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.SimpleBooleanProperty;
+
 /**
  *
  * @author ivan
  */
 public class GibierPoil extends Gibier{
+
+    private final BooleanProperty bois = new SimpleBooleanProperty();
+    public boolean isBois() { return bois.get(); }
+    public void setBois(boolean value) { bois.set(value); }
+    public BooleanProperty boisProperty() { return bois; }
     
-    private boolean bois;
-
-    /**
-     * Get the value of bois
-     *
-     * @return the value of bois
-     */
-    public boolean isBois() {
-        return bois;
-    }
-
-    /**
-     * Set the value of bois
-     *
-     * @param bois new value of bois
-     */
-    public void setBois(boolean bois) {
-        this.bois = bois;
-    }
-
 }

@@ -5,30 +5,19 @@
  */
 package Metier;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
 /**
  *
  * @author ivan
  */
 public class Gibier extends Animal{
+
+    private final StringProperty poidsMoyen = new SimpleStringProperty();
+    public String getPoidsMoyen() { return poidsMoyen.get(); }
+    public void setPoidsMoyen(String value) { poidsMoyen.set(value); }
+    public StringProperty poidsMoyenProperty() { return poidsMoyen; }
     
-    private float poidsMoyen;
-
-    /**
-     * Get the value of poidsMoyen
-     *
-     * @return the value of poidsMoyen
-     */
-    public float getPoidsMoyen() {
-        return poidsMoyen;
-    }
-
-    /**
-     * Set the value of poidsMoyen
-     *
-     * @param poidsMoyen new value of poidsMoyen
-     */
-    public void setPoidsMoyen(float poidsMoyen) {
-        this.poidsMoyen = poidsMoyen;
-    }
 
 }

@@ -5,30 +5,28 @@
  */
 package Metier;
 
+import javafx.beans.property.FloatProperty;
+import javafx.beans.property.SimpleFloatProperty;
+
 /**
  *
  * @author ivan
  */
 public class Poisson extends Animal{
-    
-    private float tailleMoyenne;
 
-    /**
-     * Get the value of tailleMoyenne
-     *
-     * @return the value of tailleMoyenne
-     */
+    private final FloatProperty tailleMoyenne = new SimpleFloatProperty();
+
     public float getTailleMoyenne() {
+        return tailleMoyenne.get();
+    }
+
+    public void setTailleMoyenne(float value) {
+        tailleMoyenne.set(value);
+    }
+
+    public FloatProperty tailleMoyenneProperty() {
         return tailleMoyenne;
     }
-
-    /**
-     * Set the value of tailleMoyenne
-     *
-     * @param tailleMoyenne new value of tailleMoyenne
-     */
-    public void setTailleMoyenne(float tailleMoyenne) {
-        this.tailleMoyenne = tailleMoyenne;
-    }
-
+    
+    
 }
