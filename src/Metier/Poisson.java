@@ -12,7 +12,7 @@ import javafx.beans.property.SimpleFloatProperty;
  *
  * @author ivan
  */
-public class Poisson extends Animal{
+public class Poisson extends Animal implements IPoisson{
 
     private final FloatProperty tailleMoyenne = new SimpleFloatProperty();
 

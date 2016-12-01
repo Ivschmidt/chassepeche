@@ -12,7 +12,7 @@ import javafx.beans.property.StringProperty;
  *
  * @author ivan
  */
-public class Gibier extends Animal{
+public class Gibier extends Animal implements IGibier{
 
     private final StringProperty poidsMoyen = new SimpleStringProperty();
     public String getPoidsMoyen() { return poidsMoyen.get(); }
