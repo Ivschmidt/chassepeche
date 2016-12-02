@@ -7,10 +7,12 @@ package controller;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
+import vue.ControlUCAccueil;
+
 
 /**
  *
@@ -18,17 +20,19 @@ import javafx.scene.control.Label;
  */
 public class ControllerAccueil implements Initializable {
     
-    @FXML
-    private Label label;
     
-    @FXML
-    private void ClickButtonChasse(ActionEvent event) {
-        
-    }
-    
+     @FXML AnchorPane archorpane;
+     
+     @FXML
+     public void BoutonAccueil(Event e){
+        ControlUCAccueil u = new ControlUCAccueil();
+        archorpane.getChildren().add(u);
+     }
+     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        ControlUCAccueil u = new ControlUCAccueil();
+        archorpane.getChildren().add(u);
     }    
     
 }
