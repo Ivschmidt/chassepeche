@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+<<<<<<< HEAD
+            <file>file:/C:/Users/antho/Desktop/chassePeche/chassepeche/src/vue/userControlAccueil.fxml</file>
+            <file>file:/C:/Users/antho/Desktop/chassePeche/chassepeche/src/chassepecheettradition/ChassePecheEtTradition.java</file>
+            <file>file:/C:/Users/antho/Desktop/chassePeche/chassepeche/src/vue/ControlUCAccueil.java</file>
+            <file>file:/C:/Users/antho/Desktop/chassePeche/chassepeche/src/controller/ControllerAccueil.java</file>
+            <file>file:/C:/Users/antho/Desktop/chassePeche/chassepeche/src/vue/Accueil.fxml</file>
+=======
+            <file>file:/D:/Workspace/Info/2emeA/Java_FXML/chassepeche/src/Metier/GibierPlume.java</file>
+            <file>file:/D:/Workspace/Info/2emeA/Java_FXML/chassepeche/src/Metier/IChasse.java</file>
+            <file>file:/D:/Workspace/Info/2emeA/Java_FXML/chassepeche/src/Metier/IPoisson.java</file>
+            <file>file:/D:/Workspace/Info/2emeA/Java_FXML/chassepeche/src/Metier/IPeche.java</file>
+            <file>file:/D:/Workspace/Info/2emeA/Java_FXML/chassepeche/src/Metier/ZonePeche.java</file>
+            <file>file:/D:/Workspace/Info/2emeA/Java_FXML/chassepeche/src/Metier/ZoneChasse.java</file>
+            <file>file:/D:/Workspace/Info/2emeA/Java_FXML/chassepeche/src/Metier/IGibier.java</file>
+            <file>file:/D:/Workspace/Info/2emeA/Java_FXML/chassepeche/src/Metier/Poisson.java</file>
+            <file>file:/D:/Workspace/Info/2emeA/Java_FXML/chassepeche/src/Metier/GibierPoil.java</file>
+<<<<<<< HEAD
+            <file>file:/D:/Workspace/Info/2emeA/Java_FXML/chassepeche/src/Metier/Gibier.java</file>
+=======
+>>>>>>> 9f913810d6c26dd8036b9db9a0740a98969204e4
+>>>>>>> 3b64913685d5182c0b209d5883021611c47271fb
+        </group>
+    </open-files>
+</project-private>
