@@ -36,11 +36,5 @@ public class ZoneChasse implements IChasse{
     public ObservableList getTypeChasseAutorise() { return typeChasseAutorise.get(); }
     public void setTypeChasseAutorise(ObservableList value) { typeChasseAutorise.set(value); }
     public ListProperty typeChasseAutoriseProperty() { return typeChasseAutorise; }
-  
-    private final ObjectProperty<Zone> zone = new SimpleObjectProperty<>();
-    public Zone getZone() { return zone.get(); }
-    public void setZone(Zone value) { zone.set(value); }
-    public ObjectProperty zoneProperty() {return zone; }
-    
     
 }

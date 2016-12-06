@@ -12,6 +12,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.layout.AnchorPane;
 import vue.ControlUCAccueil;
+import vue.ControlUCAnimal;
 
 
 /**
@@ -26,7 +27,14 @@ public class ControllerAccueil implements Initializable {
      @FXML
      public void BoutonAccueil(Event e){
         ControlUCAccueil u = new ControlUCAccueil();
+        archorpane.getChildren().clear();
         archorpane.getChildren().add(u);
+     }
+     
+     public void BoutonAnimal (Event e) {
+         ControlUCAnimal animal = new ControlUCAnimal();
+         archorpane.getChildren().clear();
+         archorpane.getChildren().add(animal);
      }
      
     @Override

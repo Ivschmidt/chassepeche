@@ -25,12 +25,7 @@ public class ZonePeche implements IPeche{
     public ObservableList getTypePecheAutorise() { return typePecheAutorise.get(); }
     public void setTypePecheAutorise(ObservableList value) { typePecheAutorise.set(value); }
     public ListProperty typePecheAutoriseProperty() { return typePecheAutorise; }
-    
-    private final ObjectProperty<Zone> zone = new SimpleObjectProperty<>();
-    public Zone getZone() { return zone.get(); }
-    public void setZone(Zone value) { zone.set(value); }
-    public ObjectProperty zoneProperty() {return zone;}
-  
+      
     private final FloatProperty prixPermis = new SimpleFloatProperty();
     public float getPrixPermis() { return prixPermis.get(); }
     public void setPrixPermis(float value) { prixPermis.set(value); }
