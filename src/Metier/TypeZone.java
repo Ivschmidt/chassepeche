@@ -6,14 +6,18 @@
 package Metier;
 
 /**
- *
+ *Cette énumération correspond au type de zone que l'on choisit
  * @author ivan
  */
 public enum TypeZone {
     Continent,
     Region,
     Pays;
-   
+    
+    /**
+     * 
+     * @return un string correpondant au type de zone choisit
+     */
  @Override
   public String toString() {
     switch(this) {

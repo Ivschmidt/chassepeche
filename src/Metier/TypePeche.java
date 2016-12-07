@@ -6,8 +6,8 @@
 package Metier;
 
 /**
- *
- * @author ivan
+ *Cette énumération correspond aux différents types de pêche possible.
+ * @author ivan et Anthony
  */
 public enum TypePeche {
     Lancer,
@@ -16,6 +16,10 @@ public enum TypePeche {
     Toc,
     Nokill;
 
+     /**
+     * 
+     * @return un string correpondant au type de pêche choisit
+     */
     @Override
     public String toString() {
         switch(this){

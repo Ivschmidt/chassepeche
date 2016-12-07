@@ -14,51 +14,39 @@ import javafx.beans.property.StringProperty;
  */
 public class Zone {
 
+    /**
+     * nom de la zone
+     */
     private final StringProperty nom = new SimpleStringProperty();
-
-    private String getNom() {
-        return nom.get();
-    }
-
-    private void setNom(String value) {
-        nom.set(value);
-    }
-
-    private StringProperty nomProperty() {
-        return nom;
-    }
+    public String getNom() {return nom.get();}
+    private void setNom(String value) {nom.set(value);}
+    public StringProperty nomProperty() {return nom;}
+    
+    /**
+     * descriptif de la zone 
+     */
     private final StringProperty descriptif = new SimpleStringProperty();
-
-    private String getDescriptif() {
-        return descriptif.get();
-    }
-
-    private void setDescriptif(String value) {
-        descriptif.set(value);
-    }
-
-    private StringProperty descriptifProperty() {
-        return descriptif;
-    }
+    public String getDescriptif() {return descriptif.get();}
+    private void setDescriptif(String value) {descriptif.set(value);}
+    public StringProperty descriptifProperty() {return descriptif;}
    
-    private TypeZone type;
+    /**
+     * Cet attribut correpond à un des choix de l'énumération typeZone
+     */
+    private TypeZone type;  
+    public TypeZone getType() {return type;}
+    private void setType(TypeZone type) {this.type = type;}
 
     /**
-     * Get the value of type
-     *
-     * @return the value of type
+     * 
+     * @param nom nom de la zone
+     * @param descriptif descriptif de la zone 
+     * @param type type de la zone
      */
-    public TypeZone getType() {
-        return type;
+    public Zone(String nom,String descriptif,TypeZone type) {
+        this.setNom(nom);
+        this.setDescriptif(descriptif);
+        this.setType(type);
     }
-
-    /**
-     * Set the value of type
-     *
-     * @param type new value of type
-     */
-    public void setType(TypeZone type) {
-        this.type = type;
-    }
- 
+    
 }

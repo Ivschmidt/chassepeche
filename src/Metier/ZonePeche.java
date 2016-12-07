@@ -8,33 +8,66 @@ package Metier;
 import javafx.beans.property.FloatProperty;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.ListProperty;
-import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleFloatProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleListProperty;
-import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.ObservableList;
+
 
 /**
  *
- * @author ivans
+ * @author ivan et Anthony
+ * Cette classe hérite de la classe Zone. Elle correspond au zone de pêche
  */
-public class ZonePeche implements IPeche{
+public class ZonePeche extends Zone implements IPeche{
 
+    /**
+     * Liste des types de pêche autorisés dans la zone
+     */
     private final ListProperty<TypePeche> typePecheAutorise = new SimpleListProperty<>();
     public ObservableList getTypePecheAutorise() { return typePecheAutorise.get(); }
-    public void setTypePecheAutorise(ObservableList value) { typePecheAutorise.set(value); }
+    private void setTypePecheAutorise(ObservableList value) { typePecheAutorise.set(value); }
     public ListProperty typePecheAutoriseProperty() { return typePecheAutorise; }
-      
+    
+    /**
+     * prix du permis pour la zone 
+     */
     private final FloatProperty prixPermis = new SimpleFloatProperty();
     public float getPrixPermis() { return prixPermis.get(); }
-    public void setPrixPermis(float value) { prixPermis.set(value); }
+    private void setPrixPermis(float value) { prixPermis.set(value); }
     public FloatProperty prixPermisProperty() { return prixPermis; }
   
+    /**
+     * nombre de pêcheur de la zone
+     */
     private final IntegerProperty nombrePecheur = new SimpleIntegerProperty();
     public int getNombrePecheur() { return nombrePecheur.get(); }
-    public void setNombrePecheur(int value) { nombrePecheur.set(value); }
+    private void setNombrePecheur(int value) { nombrePecheur.set(value); }
     public IntegerProperty nombrePecheurProperty() { return nombrePecheur; }
+
+    /**
+     * 
+     * @param nom nom de la zone 
+     * @param descriptif descriptif de la zone 
+     * @param type type de la zone 
+     * @param prix prix du permsi de pêche
+     * @param nbPecheur nombre de pêcheur de la zone 
+     * @param liste  liste des types de pêche possible dans la zone.
+     */
+    public ZonePeche(String nom, String descriptif, TypeZone type,float prix,int nbPecheur,ObservableList<TypePeche> liste) {
+        super(nom, descriptif, type);
+        this.setPrixPermis(prix);
+        this.setNombrePecheur(nbPecheur);
+        this.setTypePecheAutorise(liste);        
+    }
+    
+    /**
+     * permet d'ajouter un type de peche à la zone
+     * @param type type de peche à ajouter.
+     */
+    public void ajouterTypePeche(TypePeche type){
+        typePecheAutorise.add(type);
+    }
     
     
 }

@@ -6,8 +6,8 @@
 package Metier;
 
 /**
- *
- * @author ivan
+ *Cette énumération correspond aux différents types de chasse possible.
+ * @author ivan et Anthony
  */
 public enum TypeChasse {
     Affut,
@@ -15,6 +15,10 @@ public enum TypeChasse {
     ChienCourant,
     ChienArret;
     
+    /**
+     * 
+     * @return un string correpondant au type de chasse choisit
+     */
     @Override
     public String toString(){
         switch(this){

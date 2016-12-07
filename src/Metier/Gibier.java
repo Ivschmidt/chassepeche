@@ -5,19 +5,45 @@
  */
 package Metier;
 
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
+import javafx.beans.property.FloatProperty;
+import javafx.beans.property.SimpleFloatProperty;
+
 
 /**
  *
- * @author ivan
+ * @author ivan et Anthony
+ * Cette classe hérite de la classe animal et coorespond au gibier.
  */
 public class Gibier extends Animal implements IGibier{
 
-    private final StringProperty poidsMoyen = new SimpleStringProperty();
-    public String getPoidsMoyen() { return poidsMoyen.get(); }
-    public void setPoidsMoyen(String value) { poidsMoyen.set(value); }
-    public StringProperty poidsMoyenProperty() { return poidsMoyen; }
+    /**
+     * poids moyen du gibier
+     */
+    private final FloatProperty poidsMoyen = new SimpleFloatProperty();
+    public float getPoidsMoyen() {return poidsMoyen.get();}
+    private void setPoidsMoyen(float value) {poidsMoyen.set(value);}
+    public FloatProperty poidsMoyenProperty() {return poidsMoyen;}
+
+    /**
+     * ce constructeur appelle le constructeur de la classe animal
+     * @param nomC nom commun
+     * @param nomS nom scientifique
+     * @param descriptif descriptif de l'animal
+     * @param photo chemin de la photo de l'animal
+     * @param famille famille de l'animal
+     * @param poids  poids moyen du gibier.
+     */
+    public Gibier(String nomC, String nomS, String descriptif, String photo, String famille,float poids) {
+        super(nomC, nomS, descriptif, photo, famille);
+        this.setPoidsMoyen(poids);
+    }
+
+   
+    
+
+  
+    
+    
     
 
 }
