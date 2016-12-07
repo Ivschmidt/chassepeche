@@ -14,5 +14,21 @@ public enum TypePeche {
     Bouchon,
     Mouche,
     Toc,
-    Nokill
+    Nokill;
+
+    @Override
+    public String toString() {
+        switch(this){
+            case Lancer : return "lancer";
+            case Bouchon : return "bouchon";
+            case Mouche : return "mouche";
+            case Toc : return "toc";
+            case Nokill : return "nokill";
+                       
+            default: throw new IllegalArgumentException();
+        }
+       }
+    
+    
+    
 }

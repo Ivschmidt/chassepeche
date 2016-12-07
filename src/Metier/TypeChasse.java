@@ -13,5 +13,17 @@ public enum TypeChasse {
     Affut,
     Battue,
     ChienCourant,
-    ChienArret
+    ChienArret;
+    
+    @Override
+    public String toString(){
+        switch(this){
+            case Affut : return "affut";
+            case Battue : return "battue";
+            case ChienCourant : return "chien courant";
+            case ChienArret : return "chien d'arrêt";
+                       
+            default: throw new IllegalArgumentException();
+        }
+    }
 }

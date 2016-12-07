@@ -12,5 +12,16 @@ package Metier;
 public enum TypeZone {
     Continent,
     Region,
-    Pays
+    Pays;
+   
+ @Override
+  public String toString() {
+    switch(this) {
+      case Continent: return "Continent";
+      case Region: return "Région";
+      case Pays: return "Pays";
+
+      default: throw new IllegalArgumentException();
+    }
+  }
 }
