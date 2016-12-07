@@ -12,13 +12,13 @@ and open the template in the editor.
     -fx-border-color: black;
     
 }
-.root {
+/*.root {
     -fx-background-image: url("cerf.jpg");
-    -fx-background-size: auto;
+    -fx-background-size: auto/*
     -fx-background-repeat: space;   
     -fx-background-position: center center;
     -fx-effect: dropshadow(three-pass-box, black, 30, 0.5, 0, 0); 
-}
+}*/
 
 
 

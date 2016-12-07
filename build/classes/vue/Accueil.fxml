@@ -42,6 +42,6 @@
           <Button mnemonicParsing="false" onAction="#BoutonZone" text="Peche" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
        </children>
     </GridPane>
-      <AnchorPane fx:id="archorpane" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2" />
+    <AnchorPane fx:id="archorpane" GridPane.rowIndex="2"/>
  </children>
 </GridPane>

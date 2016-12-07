@@ -17,7 +17,7 @@ import javafx.scene.layout.BorderPane;
 public class ControlUCAccueil extends BorderPane {
     public ControlUCAccueil(){
         try{
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/vue/userControlAccueil.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/vue/UCAccueil.fxml"));
             loader.setController(this);
             loader.setRoot(this);
             loader.load();

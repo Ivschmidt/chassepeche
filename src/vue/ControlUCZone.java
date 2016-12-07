@@ -7,13 +7,13 @@ package vue;
 
 import java.io.IOException;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.layout.GridPane;
+import javafx.scene.layout.BorderPane;
 
 /**
  *
  * @author ivans
  */
-public class ControlUCZone extends GridPane{
+public class ControlUCZone extends BorderPane{
     public ControlUCZone(){
         try{
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/vue/UCZone.fxml"));

@@ -16,7 +16,7 @@ import javafx.scene.layout.GridPane;
 public class ControlUCAnimal extends GridPane{
     public ControlUCAnimal(){
         try{
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/vue/UCZone.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/vue/UCAnimal.fxml"));
             loader.setController(this);
             loader.setRoot(this);
             loader.load();
