@@ -13,6 +13,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.layout.AnchorPane;
 import vue.ControlUCAccueil;
 import vue.ControlUCAnimal;
+import vue.ControlUCZone;
 
 
 /**
@@ -35,6 +36,12 @@ public class ControllerAccueil implements Initializable {
          ControlUCAnimal animal = new ControlUCAnimal();
          archorpane.getChildren().clear();
          archorpane.getChildren().add(animal);
+     }
+     
+     public void BoutonZone (Event e) {
+         ControlUCZone zone = new ControlUCZone();
+         archorpane.getChildren().clear();
+         archorpane.getChildren().add(zone);
      }
      
     @Override

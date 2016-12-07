@@ -11,10 +11,10 @@ import javafx.scene.layout.GridPane;
 
 /**
  *
- * @author ivan
+ * @author ivans
  */
-public class ControlUCAnimal extends GridPane{
-    public ControlUCAnimal(){
+public class ControlUCZone extends GridPane{
+    public ControlUCZone(){
         try{
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/vue/UCZone.fxml"));
             loader.setController(this);
