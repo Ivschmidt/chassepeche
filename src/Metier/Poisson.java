@@ -37,6 +37,10 @@ public class Poisson extends Animal implements IPoisson{
         this.setTailleMoyenne(taille);
     }
     
+        @Override
+    public String toString() {
+        return "nom commun= " + this.getNomCommun() + ",\n nom scientifique= " + this.getNomScientifique() + ",\n famille = " + this.getFamille() + ",\n taille moyenne = " + this.getTailleMoyenne() + ",\n descriptif = " + this.getDescriptif() + ",\n chemin photo=" + this.getCheminPhoto();
+    }
     
     
     

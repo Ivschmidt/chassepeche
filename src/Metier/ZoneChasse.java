@@ -66,6 +66,15 @@ public class ZoneChasse extends Zone implements IChasse{
     public void ajouterTypeChasse(TypeChasse type){
         typeChasseAutorise.add(type);
     }
+
+    @Override
+    public String toString() {
+        String mess = "";
+        for(int i =1;i<typeChasseAutorise.getSize();i++){
+            mess = mess + typeChasseAutorise.get(i).toString()+"\n";
+        }
+        return super.toString() +"prix Permis = " + this.getPrixPermis() + ",\n nombre Chasseur = " + this.getNombreChasseur() + ",\n type Chasse Autorise = " + mess;
+    }
     
     
     

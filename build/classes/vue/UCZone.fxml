@@ -26,13 +26,20 @@
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label text="Prix du permis :" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-                  <Label text="Nombre de pratiquants" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-                  <Label prefHeight="21.0" prefWidth="117.0" text="Type de pratique" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                  <Label text="Descriptif" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                  <Label text="Nombre de pratiquants" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                  <Label prefHeight="21.0" prefWidth="117.0" text="Type de pratique" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+                  <Label text="Prix du permis " GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                  <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label text="Label" GridPane.columnIndex="1" />
+                  <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                </children>
             </GridPane>
             <Label text="Zone" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />

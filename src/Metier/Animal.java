@@ -69,6 +69,13 @@ public abstract class Animal {
         this.setCheminPhoto(photo);
         this.setFamille(famille);
     }
+
+    @Override
+    public String toString() {
+        return "nom commun= " + this.getNomCommun() + ",\n nom scientifique= " + this.getNomScientifique() + ",\n famille = " + this.getFamille() + ",\n descriptif = " + this.getDescriptif() + ",\n chemin photo=" + this.getCheminPhoto()+",\n";
+    }
+
+   
     
     
 

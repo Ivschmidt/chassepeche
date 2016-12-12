@@ -32,11 +32,15 @@ public class GibierPlume extends Gibier{
      * @param poids poids moyen de l'animal
      * @param vol true : l'animal vole, false : l'animal ne vole pas 
      */
-    public GibierPlume(String nomC, String nomS, String descriptif, String photo, String famille, float poids,boolean vol) {
+    public GibierPlume(String nomC, String nomS, String descriptif, String photo, String famille, Double poids,boolean vol) {
         super(nomC, nomS, descriptif, photo, famille, poids);
         this.setVol(vol);
     }
     
+     @Override
+    public String toString() {
+        return super.toString() +"Vol = " + this.isVol();
+    }
     
     
 }

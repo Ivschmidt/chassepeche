@@ -32,11 +32,14 @@ public class GibierPoil extends Gibier{
      * @param poids poids moyen de l'animal
      * @param bois true : l'animal à des bois, false : l'animal n'a pas de bois
      */
-    public GibierPoil(String nomC, String nomS, String descriptif, String photo, String famille, float poids,boolean bois) {
+    public GibierPoil(String nomC, String nomS, String descriptif, String photo, String famille, Double poids,boolean bois) {
         super(nomC, nomS, descriptif, photo, famille, poids);
         this.setBois(bois);
     }
     
-    
+     @Override
+    public String toString() {
+        return super.toString()+"bois = " + this.isBois();
+    }
     
 }

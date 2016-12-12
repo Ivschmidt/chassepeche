@@ -68,6 +68,15 @@ public class ZonePeche extends Zone implements IPeche{
     public void ajouterTypePeche(TypePeche type){
         typePecheAutorise.add(type);
     }
+
+    @Override
+    public String toString() {
+        String mess = "";
+        for(int i =1;i<typePecheAutorise.getSize();i++){
+            mess = mess + typePecheAutorise.get(i).toString()+"\n";
+        }
+        return super.toString() +"prix Permis = " + this.getPrixPermis() + ",\n nombre pecheur = " + this.getNombrePecheur() + ",\n type Peche Autorise = " + mess;
+    }
     
     
 }

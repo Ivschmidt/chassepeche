@@ -5,8 +5,10 @@
  */
 package Metier;
 
-import javafx.beans.property.FloatProperty;
-import javafx.beans.property.SimpleFloatProperty;
+import javafx.beans.property.DoubleProperty;
+import javafx.beans.property.SimpleDoubleProperty;
+
+
 
 
 /**
@@ -16,14 +18,16 @@ import javafx.beans.property.SimpleFloatProperty;
  */
 public class Gibier extends Animal implements IGibier{
 
+   
     /**
      * poids moyen du gibier
      */
-    private final FloatProperty poidsMoyen = new SimpleFloatProperty();
-    public float getPoidsMoyen() {return poidsMoyen.get();}
-    private void setPoidsMoyen(float value) {poidsMoyen.set(value);}
-    public FloatProperty poidsMoyenProperty() {return poidsMoyen;}
+    private final DoubleProperty poidsMoyen = new SimpleDoubleProperty();
+    public double getPoidsMoyen() {return poidsMoyen.get();}
+    private void setPoidsMoyen(double value) {poidsMoyen.set(value);}
+    public DoubleProperty poidsMoyenProperty() {return poidsMoyen;}
 
+  
     /**
      * ce constructeur appelle le constructeur de la classe animal
      * @param nomC nom commun
@@ -33,11 +37,18 @@ public class Gibier extends Animal implements IGibier{
      * @param famille famille de l'animal
      * @param poids  poids moyen du gibier.
      */
-    public Gibier(String nomC, String nomS, String descriptif, String photo, String famille,float poids) {
+    public Gibier(String nomC, String nomS, String descriptif, String photo, String famille,Double poids) {
         super(nomC, nomS, descriptif, photo, famille);
         this.setPoidsMoyen(poids);
     }
 
+    @Override
+    public String toString() {
+        return super.toString()+"poids moyen = " + this.getPoidsMoyen()+", \n";
+    }
+
+ 
+    
    
     
 
