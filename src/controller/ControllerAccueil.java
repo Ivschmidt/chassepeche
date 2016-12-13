@@ -11,6 +11,7 @@ import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.control.ListView;
 import javafx.scene.layout.AnchorPane;
 import vue.ControlUCAccueil;
 import vue.ControlUCAnimal;
@@ -25,6 +26,10 @@ public class ControllerAccueil implements Initializable {
     
     
      @FXML AnchorPane archorpane;
+     
+     @FXML ListView lalist;
+     
+     
      
      @FXML
      public void BoutonAccueil(Event e){

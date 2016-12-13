@@ -44,6 +44,8 @@ public class ZoneChasse extends Zone implements IChasse{
     private void setTypeChasseAutorise(ObservableList value) { typeChasseAutorise.set(value); }
     public ListProperty typeChasseAutoriseProperty() { return typeChasseAutorise; }
     
+    
+    
     /**
      * 
      * @param nom noom de la zone
@@ -51,20 +53,20 @@ public class ZoneChasse extends Zone implements IChasse{
      * @param type type de la zone
      * @param prix prix du permis pour cette zone
      * @param nbChasseur nombre de chasseur de la zone
-     * @param liste liste des types de chasses possibles dans la zone
+     * @param list liste des types de chasses possibles dans la zone
      */
-    public ZoneChasse(String nom, String descriptif, TypeZone type,float prix,int nbChasseur,ObservableList<TypeChasse> liste) {
+    public ZoneChasse(String nom, String descriptif, TypeZone type,float prix,int nbChasseur) {
         super(nom, descriptif, type);
         this.setPrixPermis(prix);
         this.setNombreChasseur(nbChasseur);
-        this.setTypeChasseAutorise(liste);
+        //this.setTypeChasseAutorise();
     }
     /**
      * permet d'ajouter un type de chasse à la zone
      * @param type type à ajouter
      */
     public void ajouterTypeChasse(TypeChasse type){
-        typeChasseAutorise.add(type);
+        this.getTypeChasseAutorise().add(type);
     }
 
     @Override
@@ -76,7 +78,6 @@ public class ZoneChasse extends Zone implements IChasse{
         return super.toString() +"prix Permis = " + this.getPrixPermis() + ",\n nombre Chasseur = " + this.getNombreChasseur() + ",\n type Chasse Autorise = " + mess;
     }
     
-    
-    
+       
     
 }
