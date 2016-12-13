@@ -5,6 +5,7 @@
  */
 package Metier;
 
+import java.util.Objects;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
@@ -75,6 +76,7 @@ public abstract class Animal {
         return "nom commun= " + this.getNomCommun() + ",\n nom scientifique= " + this.getNomScientifique() + ",\n famille = " + this.getFamille() + ",\n descriptif = " + this.getDescriptif() + ",\n chemin photo=" + this.getCheminPhoto()+",\n";
     }
 
+    
    
     
     

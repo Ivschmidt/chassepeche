@@ -6,6 +6,7 @@
 
 package Test;
 import Metier.*;
+import com.sun.javafx.collections.ObservableListWrapper;
 import java.util.ArrayList;
 import java.util.List;
 import javafx.beans.property.ListProperty;
@@ -27,9 +28,9 @@ public class Test {
            System.out.println(truite.toString());
 
            // probleme pour mettre la liste dans la zone de chasse
-          // ZoneChasse auvergne = new ZoneChasse("Auvergne", "Région Française très rurale", TypeZone.Region,100,10000,null);
-           
-          //System.out.println(auvergne.toString());
+           ZoneChasse auvergne = new ZoneChasse("Auvergne", "Région Française très rurale", TypeZone.Region,100,10000);
+           auvergne.ajouterTypeChasse(TypeChasse.Battue);
+           System.out.println(auvergne.toString());
 
            
     }
