@@ -11,10 +11,15 @@ import Metier.IDataManager;
  *Stockage des données.
  * @author antho
  */
-public class DataManager implements IDataManager{
+public class StubDataManager implements IDataManager{
         
     @Override
     public void chargeZoneChasse() {
+        
+    }
+
+    @Override
+    public void chargeZonePeche() {
         
     }
     
