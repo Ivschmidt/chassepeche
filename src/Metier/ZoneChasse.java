@@ -11,6 +11,7 @@ import javafx.beans.property.ListProperty;
 import javafx.beans.property.SimpleFloatProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleListProperty;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 /**
@@ -39,10 +40,11 @@ public class ZoneChasse extends Zone implements IChasse{
     /**
      * liste des types de chasse autorisés dans la zone
      */
-    private final ListProperty<TypeChasse> typeChasseAutorise = new SimpleListProperty<>();
-    public ObservableList getTypeChasseAutorise() { return typeChasseAutorise.get(); }
-    private void setTypeChasseAutorise(ObservableList value) { typeChasseAutorise.set(value); }
-    public ListProperty typeChasseAutoriseProperty() { return typeChasseAutorise; }
+    private final ListProperty<TypeChasse> typeChasseAutorise = new SimpleListProperty<>(
+                                        FXCollections.observableArrayList());
+    public ObservableList<TypeChasse> getTypeChasseAutorise() { return typeChasseAutorise.get(); }
+    private void setTypeChasseAutorise(ObservableList<TypeChasse> value) { typeChasseAutorise.set(value); }
+    public ListProperty<TypeChasse> typeChasseAutoriseProperty() { return typeChasseAutorise; }
     
     
     

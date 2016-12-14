@@ -5,15 +5,15 @@
  */
 package Persistance;
 
-import Metier.IDataManager;
+//import Metier.IDataManager;
 
 /**
  *Stockage des données.
  * @author antho
  */
-public class DataManager implements IDataManager{
+public class DataManager{// implements IDataManager{
         
-    @Override
+    //@Override
     public void chargeZoneChasse() {
         
     }
