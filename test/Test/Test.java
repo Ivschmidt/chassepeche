@@ -31,14 +31,14 @@ public class Test {
            System.out.println(truite.toString());
 
            // probleme pour mettre la liste dans la zone de chasse
-           ListProperty<TypeChasse> list = new SimpleListProperty<TypeChasse>();
-           list.add(TypeChasse.Affut);
-           list.add(TypeChasse.Battue);
+          // ListProperty<TypeChasse> list = new SimpleListProperty<TypeChasse>();
+          // list.add(TypeChasse.Affut);
+          // list.add(TypeChasse.Battue);
           // ZoneChasse auvergne = new ZoneChasse("Auvergne", "Région Française très rurale", TypeZone.Region,100,10000,list);
           
            //System.out.println(auvergne.toString());
-           Zone auvergneC = new ZoneChasse("Auvergne", "Région Française très rurale", TypeZone.Region,100,10000);
-          // auvergne.ajouterTypeChasse(TypeChasse.Battue);
+           ZoneChasse auvergneC = new ZoneChasse("Auvergne", "Région Française très rurale", TypeZone.Region,100,10000);
+           auvergneC.ajouterTypeChasse(TypeChasse.Battue);
            System.out.println(auvergneC.toString());
            
            Zone FranceP = new ZonePeche("France", "pays ou la pêche est beaucoup pratiqué", TypeZone.Pays, 55, 50000,null);
