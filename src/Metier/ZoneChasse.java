@@ -46,6 +46,14 @@ public class ZoneChasse extends Zone implements IChasse{
     private void setTypeChasseAutorise(ObservableList<TypeChasse> value) { typeChasseAutorise.set(value); }
     public ListProperty<TypeChasse> typeChasseAutoriseProperty() { return typeChasseAutorise; }
     
+    /**
+     * liste des gibiers de la zone
+     */
+    private final ListProperty<Gibier> gibier = new SimpleListProperty<>(
+                                        FXCollections.observableArrayList());
+    public ObservableList<Gibier> getGibier() { return gibier.get(); }
+    private void setGibier(ObservableList<Gibier> value) { gibier.set(value); }
+    public ListProperty<Gibier> gibierProperty() { return gibier; }
     
     
     /**
@@ -55,7 +63,6 @@ public class ZoneChasse extends Zone implements IChasse{
      * @param type type de la zone
      * @param prix prix du permis pour cette zone
      * @param nbChasseur nombre de chasseur de la zone
-     * @param list liste des types de chasses possibles dans la zone
      */
     public ZoneChasse(String nom, String descriptif, TypeZone type,float prix,int nbChasseur) {
         super(nom, descriptif, type);
@@ -70,14 +77,22 @@ public class ZoneChasse extends Zone implements IChasse{
     public void ajouterTypeChasse(TypeChasse type){
         this.getTypeChasseAutorise().add(type);
     }
+    
+    public void ajouterGibier(Gibier g){
+        this.getGibier().add(g);
+    }
 
     @Override
     public String toString() {
         String mess = "";
-        for(int i =1;i<typeChasseAutorise.getSize();i++){
-            mess = mess + typeChasseAutorise.get(i).toString()+"\n";
+        for(int i =0;i<typeChasseAutorise.getSize();i++){
+            mess = mess + typeChasseAutorise.get(i).toString()+", ";
         }
-        return super.toString() +"prix Permis = " + this.getPrixPermis() + ",\n nombre Chasseur = " + this.getNombreChasseur() + ",\n type Chasse Autorise = " + mess;
+        String gib = "";
+        for(int i =0;i<gibier.getSize();i++){
+            gib = gib + gibier.get(i).getNomCommun()+", ";
+        }
+        return super.toString() +"prix Permis = " + this.getPrixPermis() + ",\n nombre Chasseur = " + this.getNombreChasseur() + ",\n type Chasse Autorise = " + mess + "\n Liste gibier : "+gib;
     }
     
        

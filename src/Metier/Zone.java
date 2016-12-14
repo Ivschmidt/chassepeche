@@ -49,6 +49,7 @@ public class Zone {
         this.setType(type);
     }
 
+    
     @Override
     public String toString() {
         return "nom = " + this.getNom() + ",\n descriptif = " + getDescriptif() + ",\n type = " + this.getType().toString()+"\n";
