@@ -21,22 +21,7 @@ import javafx.collections.ObservableList;
  */
 public class ZoneChasse extends Zone implements IChasse{
 
-    /**
-     * prix du permis pour la zone
-     */
-    private final FloatProperty prixPermis = new SimpleFloatProperty();
-    public float getPrixPermis() { return prixPermis.get(); }
-    private void setPrixPermis(float value) { prixPermis.set(value); }
-    public FloatProperty prixPermisProperty() { return prixPermis; }
-    
-    /**
-     * nombre de chasseur de la zone
-     */
-    private final IntegerProperty nombreChasseur = new SimpleIntegerProperty();
-    public int getNombreChasseur() { return nombreChasseur.get(); }
-    private void setNombreChasseur(int value) { nombreChasseur.set(value); }
-    public IntegerProperty nombreChasseurProperty() { return nombreChasseur; }
-
+   
     /**
      * liste des types de chasse autorisés dans la zone
      */
@@ -55,13 +40,9 @@ public class ZoneChasse extends Zone implements IChasse{
      * @param type type de la zone
      * @param prix prix du permis pour cette zone
      * @param nbChasseur nombre de chasseur de la zone
-     * @param list liste des types de chasses possibles dans la zone
      */
     public ZoneChasse(String nom, String descriptif, TypeZone type,float prix,int nbChasseur) {
-        super(nom, descriptif, type);
-        this.setPrixPermis(prix);
-        this.setNombreChasseur(nbChasseur);
-        //this.setTypeChasseAutorise();
+        super(nom, descriptif, type,prix,nbChasseur);        
     }
     /**
      * permet d'ajouter un type de chasse à la zone
@@ -77,7 +58,7 @@ public class ZoneChasse extends Zone implements IChasse{
         for(int i =1;i<typeChasseAutorise.getSize();i++){
             mess = mess + typeChasseAutorise.get(i).toString()+"\n";
         }
-        return super.toString() +"prix Permis = " + this.getPrixPermis() + ",\n nombre Chasseur = " + this.getNombreChasseur() + ",\n type Chasse Autorise = " + mess;
+        return super.toString() + ",\n type Chasse Autorise = " + mess;
     }
     
        

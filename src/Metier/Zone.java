@@ -5,6 +5,10 @@
  */
 package Metier;
 
+import javafx.beans.property.FloatProperty;
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleFloatProperty;
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
@@ -36,22 +40,43 @@ public class Zone {
     private TypeZone type;  
     public TypeZone getType() {return type;}
     private void setType(TypeZone type) {this.type = type;}
+    
+     /**
+     * prix du permis pour la zone
+     */
+    private final FloatProperty prixPermis = new SimpleFloatProperty();
+    public float getPrixPermis() { return prixPermis.get(); }
+    private void setPrixPermis(float value) { prixPermis.set(value); }
+    public FloatProperty prixPermisProperty() { return prixPermis; }
+    
+    /**
+     * nombre de pratiquant de la zone
+     */
+    private final IntegerProperty nombrePratiquant = new SimpleIntegerProperty();
+    public int getNombrePratiquant() { return nombrePratiquant.get(); }
+    private void setNombrePratiquant(int value) { nombrePratiquant.set(value); }
+    public IntegerProperty nombrePratiquantProperty() { return nombrePratiquant; }
+
 
     /**
      * 
      * @param nom nom de la zone
      * @param descriptif descriptif de la zone 
      * @param type type de la zone
+     * @param prix prix du permis
+     * @param nbParticipant nombre de participant
      */
-    public Zone(String nom,String descriptif,TypeZone type) {
+    public Zone(String nom,String descriptif,TypeZone type,float prix,int nbParticipant) {
         this.setNom(nom);
         this.setDescriptif(descriptif);
         this.setType(type);
+        this.setPrixPermis(prix);
+        this.setNombrePratiquant(nbParticipant);
     }
 
     @Override
     public String toString() {
-        return "nom = " + this.getNom() + ",\n descriptif = " + getDescriptif() + ",\n type = " + this.getType().toString()+"\n";
+        return "nom = " + this.getNom() + ",\n descriptif = " + getDescriptif() + ",\n type = " + this.getType().toString()+",\n prix Permis = " + this.getPrixPermis() + ",\n nombre pratiquant = "+ this.getNombrePratiquant();
     }
     
     

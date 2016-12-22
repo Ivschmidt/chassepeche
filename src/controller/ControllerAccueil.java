@@ -5,8 +5,12 @@
  */
 package controller;
 
+import Metier.Manager;
+import Metier.Zone;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleObjectProperty;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -25,13 +29,14 @@ import vue.ControlUCZone;
 public class ControllerAccueil implements Initializable {
     
     
-     @FXML AnchorPane archorpane;
-     
-     @FXML ListView lalist;
-     
-     
-     
-     @FXML
+    @FXML AnchorPane archorpane;
+    
+    private final ObjectProperty<Manager> manager = new SimpleObjectProperty<>();
+    public Manager getManager() { return manager.get(); }
+    public void setManager(Manager value) { manager.set(value); }
+    public ObjectProperty managerProperty() { return manager; }
+    
+    @FXML
      public void BoutonAccueil(Event e){
         ControlUCAccueil u = new ControlUCAccueil();
         archorpane.getChildren().clear();
@@ -47,8 +52,16 @@ public class ControllerAccueil implements Initializable {
          setAnchor(animal);
      }
      
-     public void BoutonZone (Event e) {
-         ControlUCZone zone = new ControlUCZone();
+     public void BoutonChasse (Event e) {
+         ControlUCZone zone = new ControlUCZone(1,manager);
+         archorpane.getChildren().clear();
+         archorpane.getChildren().add(zone);
+         setAnchor(zone);
+
+     }
+     
+       public void BoutonPeche (Event e) {
+         ControlUCZone zone = new ControlUCZone(0,manager);
          archorpane.getChildren().clear();
          archorpane.getChildren().add(zone);
          setAnchor(zone);
@@ -60,6 +73,7 @@ public class ControllerAccueil implements Initializable {
         ControlUCAccueil u = new ControlUCAccueil();
         archorpane.getChildren().add(u);
         setAnchor(u);
+        
     }    
     
     private void setAnchor(Node u)
