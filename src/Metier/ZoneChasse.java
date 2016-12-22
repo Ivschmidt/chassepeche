@@ -74,11 +74,9 @@ public class ZoneChasse extends Zone implements IChasse{
         for(int i =0;i<gibier.getSize();i++){
             gib = gib + gibier.get(i).getNomCommun()+", ";
         }
-<<<<<<< HEAD
-        return super.toString() + ",\n type Chasse Autorise = " + mess;
-=======
-        return super.toString() +"prix Permis = " + this.getPrixPermis() + ",\n nombre Chasseur = " + this.getNombreChasseur() + ",\n type Chasse Autorise = " + mess + "\n Liste gibier : "+gib;
->>>>>>> 19f00c31d2c03c9f5c5c038aadad6649baee2129
+        
+        return super.toString() + ",\n type Chasse Autorise = " + mess + "\n Liste gibier : "+gib;
+
     }
     
        

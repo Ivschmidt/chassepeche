@@ -27,7 +27,7 @@ public class ControlUCZone extends BorderPane{
     ObjectProperty<Manager> m;
      
     public ControlUCZone(int i, ObjectProperty<Manager> m){
-        this.m=m;
+      /*  this.m=m;
         lalist.setCellFactory((ListView<Zone> param) -> {
             return new ListCell<Zone>(){
                @Override
@@ -41,8 +41,8 @@ public class ControlUCZone extends BorderPane{
                     }
                 }
             }
-        }
-        if(i==0){
+        }*/
+        if(i==0 || i==1){
             try{
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/vue/UCZone.fxml"));
                 loader.setController(this);

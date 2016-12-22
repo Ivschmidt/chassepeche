@@ -31,9 +31,6 @@ public class ZonePeche extends Zone implements IPeche{
     private void setTypePecheAutorise(ObservableList value) { typePecheAutorise.set(value); }
     public ListProperty typePecheAutoriseProperty() { return typePecheAutorise; }
     
-<<<<<<< HEAD
-   
-=======
     /**
      * Liste des poissons de la zone
      */
@@ -59,7 +56,6 @@ public class ZonePeche extends Zone implements IPeche{
     private void setNombrePecheur(int value) { nombrePecheur.set(value); }
     public IntegerProperty nombrePecheurProperty() { return nombrePecheur; }
 
->>>>>>> 19f00c31d2c03c9f5c5c038aadad6649baee2129
     /**
      * 
      * @param nom nom de la zone 
@@ -69,14 +65,9 @@ public class ZonePeche extends Zone implements IPeche{
      * @param nbPecheur nombre de pêcheur de la zone 
      */
     public ZonePeche(String nom, String descriptif, TypeZone type,float prix,int nbPecheur) {
-        super(nom, descriptif, type);
-<<<<<<< HEAD
-        
-        this.setTypePecheAutorise(liste);        
-=======
+        super(nom, descriptif, type,prix,nbPecheur);
         this.setPrixPermis(prix);
         this.setNombrePecheur(nbPecheur);
->>>>>>> 19f00c31d2c03c9f5c5c038aadad6649baee2129
     }
     
     /**
@@ -102,12 +93,7 @@ public class ZonePeche extends Zone implements IPeche{
         for(int i =0;i<poisson.getSize();i++){
             pois = pois + poisson.get(i).getNomCommun()+", ";
         }
-<<<<<<< HEAD
-        return super.toString() +",\n type Peche Autorise = " + mess;
-=======
-        
-        return super.toString() +"prix Permis = " + this.getPrixPermis() + ",\n nombre pecheur = " + this.getNombrePecheur() + ",\n type Peche Autorise = " + mess+ "\n Liste des poissons : "+pois;
->>>>>>> 19f00c31d2c03c9f5c5c038aadad6649baee2129
+        return super.toString() +",\n type Peche Autorise = " + mess+ "\n Liste des poissons : "+pois;
     }
     
     

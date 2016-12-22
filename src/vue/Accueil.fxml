@@ -37,9 +37,9 @@
         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
       </rowConstraints>
        <children>
-          <Button mnemonicParsing="false" onAction="#BoutonZone" text="Chasse" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+          <Button mnemonicParsing="false" onAction="#BoutonChasse" text="Chasse" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
           <Button alignment="CENTER" mnemonicParsing="false" onAction="#BoutonAccueil" text="Accueil" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-          <Button mnemonicParsing="false" onAction="#BoutonZone" text="Peche" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+          <Button mnemonicParsing="false" onAction="#BoutonPeche" text="Peche" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
        </children>
     </GridPane>
     <AnchorPane fx:id="archorpane" GridPane.rowIndex="2"/>
