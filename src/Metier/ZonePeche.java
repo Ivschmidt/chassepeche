@@ -11,6 +11,7 @@ import javafx.beans.property.ListProperty;
 import javafx.beans.property.SimpleFloatProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleListProperty;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 
@@ -24,12 +25,41 @@ public class ZonePeche extends Zone implements IPeche{
     /**
      * Liste des types de pêche autorisés dans la zone
      */
-    private final ListProperty<TypePeche> typePecheAutorise = new SimpleListProperty<>();
+    private final ListProperty<TypePeche> typePecheAutorise = new SimpleListProperty<>(
+                                        FXCollections.observableArrayList());
     public ObservableList getTypePecheAutorise() { return typePecheAutorise.get(); }
     private void setTypePecheAutorise(ObservableList value) { typePecheAutorise.set(value); }
     public ListProperty typePecheAutoriseProperty() { return typePecheAutorise; }
     
+<<<<<<< HEAD
    
+=======
+    /**
+     * Liste des poissons de la zone
+     */
+    private final ListProperty<Poisson> poisson = new SimpleListProperty<>(
+                                        FXCollections.observableArrayList());
+    public ObservableList<Poisson> getPoisson() { return poisson.get(); }
+    private void setPoisson(ObservableList<Poisson> value) { poisson.set(value); }
+    public ListProperty<Poisson> poissonProperty() { return poisson; }
+    
+    /**
+     * prix du permis pour la zone 
+     */
+    private final FloatProperty prixPermis = new SimpleFloatProperty();
+    public float getPrixPermis() { return prixPermis.get(); }
+    private void setPrixPermis(float value) { prixPermis.set(value); }
+    public FloatProperty prixPermisProperty() { return prixPermis; }
+  
+    /**
+     * nombre de pêcheur de la zone
+     */
+    private final IntegerProperty nombrePecheur = new SimpleIntegerProperty();
+    public int getNombrePecheur() { return nombrePecheur.get(); }
+    private void setNombrePecheur(int value) { nombrePecheur.set(value); }
+    public IntegerProperty nombrePecheurProperty() { return nombrePecheur; }
+
+>>>>>>> 19f00c31d2c03c9f5c5c038aadad6649baee2129
     /**
      * 
      * @param nom nom de la zone 
@@ -37,12 +67,16 @@ public class ZonePeche extends Zone implements IPeche{
      * @param type type de la zone 
      * @param prix prix du permsi de pêche
      * @param nbPecheur nombre de pêcheur de la zone 
-     * @param liste  liste des types de pêche possible dans la zone.
      */
-    public ZonePeche(String nom, String descriptif, TypeZone type,float prix,int nbPecheur,ObservableList<TypePeche> liste) {
+    public ZonePeche(String nom, String descriptif, TypeZone type,float prix,int nbPecheur) {
         super(nom, descriptif, type);
+<<<<<<< HEAD
         
         this.setTypePecheAutorise(liste);        
+=======
+        this.setPrixPermis(prix);
+        this.setNombrePecheur(nbPecheur);
+>>>>>>> 19f00c31d2c03c9f5c5c038aadad6649baee2129
     }
     
     /**
@@ -53,13 +87,27 @@ public class ZonePeche extends Zone implements IPeche{
         typePecheAutorise.add(type);
     }
 
+    public void ajouterPoisson(Poisson p){
+        this.getPoisson().add(p);
+    }
+    
+    
     @Override
     public String toString() {
         String mess = "";
-        for(int i =1;i<typePecheAutorise.getSize();i++){
-            mess = mess + typePecheAutorise.get(i).toString()+"\n";
+        for(int i =0;i<typePecheAutorise.getSize();i++){
+            mess = mess + typePecheAutorise.get(i).toString()+", ";
         }
+        String pois = "";
+        for(int i =0;i<poisson.getSize();i++){
+            pois = pois + poisson.get(i).getNomCommun()+", ";
+        }
+<<<<<<< HEAD
         return super.toString() +",\n type Peche Autorise = " + mess;
+=======
+        
+        return super.toString() +"prix Permis = " + this.getPrixPermis() + ",\n nombre pecheur = " + this.getNombrePecheur() + ",\n type Peche Autorise = " + mess+ "\n Liste des poissons : "+pois;
+>>>>>>> 19f00c31d2c03c9f5c5c038aadad6649baee2129
     }
     
     

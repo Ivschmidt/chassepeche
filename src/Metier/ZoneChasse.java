@@ -31,6 +31,14 @@ public class ZoneChasse extends Zone implements IChasse{
     private void setTypeChasseAutorise(ObservableList<TypeChasse> value) { typeChasseAutorise.set(value); }
     public ListProperty<TypeChasse> typeChasseAutoriseProperty() { return typeChasseAutorise; }
     
+    /**
+     * liste des gibiers de la zone
+     */
+    private final ListProperty<Gibier> gibier = new SimpleListProperty<>(
+                                        FXCollections.observableArrayList());
+    public ObservableList<Gibier> getGibier() { return gibier.get(); }
+    private void setGibier(ObservableList<Gibier> value) { gibier.set(value); }
+    public ListProperty<Gibier> gibierProperty() { return gibier; }
     
     
     /**
@@ -51,14 +59,26 @@ public class ZoneChasse extends Zone implements IChasse{
     public void ajouterTypeChasse(TypeChasse type){
         this.getTypeChasseAutorise().add(type);
     }
+    
+    public void ajouterGibier(Gibier g){
+        this.getGibier().add(g);
+    }
 
     @Override
     public String toString() {
         String mess = "";
-        for(int i =1;i<typeChasseAutorise.getSize();i++){
-            mess = mess + typeChasseAutorise.get(i).toString()+"\n";
+        for(int i =0;i<typeChasseAutorise.getSize();i++){
+            mess = mess + typeChasseAutorise.get(i).toString()+", ";
         }
+        String gib = "";
+        for(int i =0;i<gibier.getSize();i++){
+            gib = gib + gibier.get(i).getNomCommun()+", ";
+        }
+<<<<<<< HEAD
         return super.toString() + ",\n type Chasse Autorise = " + mess;
+=======
+        return super.toString() +"prix Permis = " + this.getPrixPermis() + ",\n nombre Chasseur = " + this.getNombreChasseur() + ",\n type Chasse Autorise = " + mess + "\n Liste gibier : "+gib;
+>>>>>>> 19f00c31d2c03c9f5c5c038aadad6649baee2129
     }
     
        

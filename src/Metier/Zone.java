@@ -74,6 +74,7 @@ public class Zone {
         this.setNombrePratiquant(nbParticipant);
     }
 
+    
     @Override
     public String toString() {
         return "nom = " + this.getNom() + ",\n descriptif = " + getDescriptif() + ",\n type = " + this.getType().toString()+",\n prix Permis = " + this.getPrixPermis() + ",\n nombre pratiquant = "+ this.getNombrePratiquant();
