@@ -5,12 +5,17 @@
  */
 package Metier;
 
+import javafx.beans.property.ListProperty;
+import javafx.collections.ObservableList;
+
 /**
  *
  * @author antho
  */
 public interface IDataManager {
-    void chargeZoneChasse();
-    void chargeZonePeche();
-    
+    ObservableList<ZoneChasse> chargeZoneChasse(); 
+    ObservableList<ZonePeche> chargeZonePeche();
+    ObservableList<Gibier> chargeGibierAuvergne();
+    ObservableList<Gibier> chargeGibierAfrique();
+
 }
