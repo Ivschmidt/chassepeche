@@ -19,7 +19,7 @@ import javafx.collections.ObservableList;
  * @author ivan et Anthony
  * Cette classe hérite de la classe Zone. Elle correspond au zone de chasse
  */
-public class ZoneChasse extends Zone implements IChasse{
+public class ZoneChasse extends Zone implements IZoneChasse{
 
    
     /**
@@ -75,7 +75,7 @@ public class ZoneChasse extends Zone implements IChasse{
             gib = gib + gibier.get(i).getNomCommun()+", ";
         }
         
-        return super.toString() + ",\n type Chasse Autorise = " + mess + "\n Liste gibier : "+gib;
+        return super.toString() + ",\n type Chasse Autorise = " + mess + "\n Liste gibier : "+gib+"\n";
 
     }
     

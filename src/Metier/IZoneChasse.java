@@ -9,6 +9,6 @@ package Metier;
  *
  * @author ivans
  */
-public interface IChasse {
+public interface IZoneChasse extends IZone{
     
 }

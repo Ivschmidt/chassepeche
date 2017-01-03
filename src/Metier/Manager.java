@@ -5,7 +5,6 @@
  */
 package Metier;
 
-import Persistance.StubDataManager;
 import javafx.beans.property.ListProperty;
 import javafx.beans.property.SimpleListProperty;
 import javafx.collections.FXCollections;
@@ -36,16 +35,21 @@ public class Manager {
     public ListProperty listZoneGibiery() { return listGibier; }
 
    
-   private IDataManager stub;
+   private final IDataManager stub;
     
-   public Manager(){
-        this.stub = new StubDataManager();
+   /**
+    * Co,nstructeur de manager
+    * @param stub Su=tub pour la persistance
+    */
+   public Manager(IDataManager stub){
+        this.stub =stub;
    } 
    
    /**
     * Cette méthode permet de charger les zones de chasse 
     */
     public void chargeZoneChasse() {
+        this.getListZoneChasse().clear();
        this.setListZoneChasse(stub.chargeZoneChasse());
     }
     
@@ -53,10 +57,12 @@ public class Manager {
      * cette méthode permet de charger les zones de peche.
      */
     public void chargeZonePeche() {
+        this.getListZonePeche().clear();
        this.setListZonePeche(stub.chargeZonePeche());
     }
     
     public void chargeGibier(String nomZone){
+        this.getListGibier().clear();
         this.setListGibier(FabriqueChargement.chargeGibier(nomZone,stub));
     }
 }
