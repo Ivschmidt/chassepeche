@@ -45,7 +45,7 @@ public class ZonePeche extends Zone implements IPeche{
      */
     private final FloatProperty prixPermis = new SimpleFloatProperty();
     public float getPrixPermis() { return prixPermis.get(); }
-    private void setPrixPermis(float value) { prixPermis.set(value); }
+    public void setPrixPermis(float value) { prixPermis.set(value); }
     public FloatProperty prixPermisProperty() { return prixPermis; }
   
     /**

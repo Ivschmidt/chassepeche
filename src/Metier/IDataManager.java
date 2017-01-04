@@ -15,7 +15,6 @@ import javafx.collections.ObservableList;
 public interface IDataManager {
     ObservableList<ZoneChasse> chargeZoneChasse(); 
     ObservableList<ZonePeche> chargeZonePeche();
-    ObservableList<Gibier> chargeGibierAuvergne();
-    ObservableList<Gibier> chargeGibierAfrique();
+    ObservableList<Gibier> chargeGibier(String nom);
 
 }

@@ -49,18 +49,27 @@ public class StubDataManager implements IDataManager{
         return getListZonePeche();
     }
 
-    @Override
+   
     public ObservableList<Gibier> chargeGibierAuvergne() {
         this.getListGibier().add(new GibierPlume("Faisan", "Phasianus", " Tous ces oiseaux sont des gibiers réputés. Leur femelle s'appelle la faisane ou poule faisane.", "/Images/faisan", "Phasianinae",1.2, true));
         this.getListGibier().add(new GibierPoil("Lievre", "Lepus", " Ce sont des petits mammifères sauvages herbivores proches des lapins. Il existe une trentaine d'espèces de lièvres de par le monde qui diffèrent entre elles par leur taille, leur coloris ou leur mode de vie. Les lièvres sont des animaux relativement solitaires vivant parfois en couple.", "/Images/Lievre", "Léporidés",4.3, false));
         return getListGibier();
     }
     
-    @Override
+    
     public ObservableList<Gibier> chargeGibierAfrique() {
         this.getListGibier().add(new GibierPoil("licorne", "Licornus", "Aniaml rarement vue", "/Images/Licorne", "licorné", 55.5,false));
         this.getListGibier().add(new GibierPoil("Elephant", "elephantus", "grosse bête qui trompe beaucoup", "/Images/Elephant", "Pachidermes", 3000.0,false));
         return getListGibier();
+    }
+
+    @Override
+    public ObservableList<Gibier> chargeGibier(String nom) {
+        switch(nom){
+            case "Auvergne" : return this.chargeGibierAuvergne();
+            case "Afrique" : return this.chargeGibierAfrique();
+        }
+        return null;
     }
     
 }

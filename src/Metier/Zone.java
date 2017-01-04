@@ -24,7 +24,7 @@ public class Zone {
      */
     private final StringProperty nom = new SimpleStringProperty();
     public String getNom() {return nom.get();}
-    private void setNom(String value) {nom.set(value);}
+    public void setNom(String value) {nom.set(value);}
     public StringProperty nomProperty() {return nom;}
     
        
@@ -33,7 +33,7 @@ public class Zone {
      */
     private final StringProperty descriptif = new SimpleStringProperty();
     public String getDescriptif() {return descriptif.get();}
-    private void setDescriptif(String value) {descriptif.set(value);}
+    public void setDescriptif(String value) {descriptif.set(value);}
     public StringProperty descriptifProperty() {return descriptif;}
    
     /**
@@ -41,14 +41,14 @@ public class Zone {
      */
     private TypeZone type;  
     public TypeZone getType() {return type;}
-    private void setType(TypeZone type) {this.type = type;}
+    public void setType(TypeZone type) {this.type = type;}
     
      /**
      * prix du permis pour la zone
      */
     private final FloatProperty prixPermis = new SimpleFloatProperty();
     public float getPrixPermis() { return prixPermis.get(); }
-    private void setPrixPermis(float value) { prixPermis.set(value); }
+    public void setPrixPermis(float value) { prixPermis.set(value); }
     public FloatProperty prixPermisProperty() { return prixPermis; }
     
     /**
@@ -56,9 +56,10 @@ public class Zone {
      */
     private final IntegerProperty nombrePratiquant = new SimpleIntegerProperty();
     public int getNombrePratiquant() { return nombrePratiquant.get(); }
-    private void setNombrePratiquant(int value) { nombrePratiquant.set(value); }
+    public void setNombrePratiquant(int value) { nombrePratiquant.set(value); }
     public IntegerProperty nombrePratiquantProperty() { return nombrePratiquant; }
 
+    public Zone(){}
 
     /**
      * 
