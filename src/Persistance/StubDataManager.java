@@ -38,13 +38,13 @@ public class StubDataManager implements IDataManager{
 
  
     @Override
-    public ObservableList<ZoneChasse> chargeZoneChasse() {
+    public ObservableList<Zone> chargeZoneChasse() {
         this.getListZoneChasse().add(new ZoneChasse("Amerik", "Loin des mexicains", TypeZone.Pays, 130, 100000));
         this.getListZoneChasse().add(new ZoneChasse("Auvergne", "Région Française très rurale", TypeZone.Region,100,10000));
         return getListZoneChasse();
     }
     @Override
-     public ObservableList<ZonePeche> chargeZonePeche() {
+     public ObservableList<Zone> chargeZonePeche() {
         this.getListZonePeche().add(new ZonePeche("France", "pays ou la pêche est beaucoup pratiqué", TypeZone.Pays, 55, 50000));
         return getListZonePeche();
     }

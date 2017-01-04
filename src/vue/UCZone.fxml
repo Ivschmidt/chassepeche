@@ -44,7 +44,7 @@
             </GridPane>
             <Label text="Zone" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
             <Label text="b" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-            <ListView prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1" items ="${controller.manager.listZoneChasse}" />
+            <ListView prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1" fx:id="listeDeZone" items ="${controller.manager.listZone}" />
          </children>
       </GridPane>
    </center>

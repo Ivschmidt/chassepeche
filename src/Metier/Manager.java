@@ -34,7 +34,12 @@ public class Manager {
     private void setListGibier(ObservableList value) { listGibier.set(value); }
     public ListProperty listZoneGibiery() { return listGibier; }
 
-   
+   private final ListProperty<Zone> listZone = new SimpleListProperty<>(
+            FXCollections.observableArrayList());
+   public ObservableList<Zone> getListZone() { return listZone.get(); }
+   private void setListZone(ObservableList<Zone> value) { listZone.set(value); }
+   public ListProperty<Zone> listZoneProperty() { return listZone; }
+   //Rajouter une propriété sur un Selected item 
    private final IDataManager stub;
     
    /**
@@ -49,16 +54,16 @@ public class Manager {
     * Cette méthode permet de charger les zones de chasse 
     */
     public void chargeZoneChasse() {
-        this.getListZoneChasse().clear();
-       this.setListZoneChasse(stub.chargeZoneChasse());
+       this.getListZone().clear();
+       this.setListZone(stub.chargeZoneChasse());
     }
     
     /** 
      * cette méthode permet de charger les zones de peche.
      */
     public void chargeZonePeche() {
-        this.getListZonePeche().clear();
-       this.setListZonePeche(stub.chargeZonePeche());
+        this.getListZone().clear();
+       this.setListZone(stub.chargeZonePeche());
     }
     
     public void chargeGibier(String nomZone){

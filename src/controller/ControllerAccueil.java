@@ -7,6 +7,7 @@ package controller;
 
 import Metier.Manager;
 import Metier.Zone;
+import Persistance.StubDataManager;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.beans.property.ObjectProperty;
@@ -31,10 +32,10 @@ public class ControllerAccueil implements Initializable {
     
     @FXML AnchorPane archorpane;
     
-    private final ObjectProperty<Manager> manager = new SimpleObjectProperty<>();
-    public Manager getManager() { return manager.get(); }
-    public void setManager(Manager value) { manager.set(value); }
-    public ObjectProperty managerProperty() { return manager; }
+    private Manager manager = new Manager(new StubDataManager());
+    
+    
+    
     
     @FXML
      public void BoutonAccueil(Event e){
@@ -45,15 +46,11 @@ public class ControllerAccueil implements Initializable {
         
      }
      
-     public void BoutonAnimal (Event e) {
-         ControlUCAnimal animal = new ControlUCAnimal();
-         archorpane.getChildren().clear();
-         archorpane.getChildren().add(animal);
-         setAnchor(animal);
-     }
      
      public void BoutonChasse (Event e) {
-         ControlUCZone zone = new ControlUCZone(1,manager);
+         manager.chargeZoneChasse();
+         ControlUCZone zone = new ControlUCZone();
+         zone.setManager(manager);
          archorpane.getChildren().clear();
          archorpane.getChildren().add(zone);
          setAnchor(zone);
@@ -61,7 +58,10 @@ public class ControllerAccueil implements Initializable {
      }
      
        public void BoutonPeche (Event e) {
-         ControlUCZone zone = new ControlUCZone(0,manager);
+         manager.chargeZonePeche();
+         ControlUCZone zone = new ControlUCZone();
+         //zone.managedProperty().bind(observable);
+         zone.setManager(manager);
          archorpane.getChildren().clear();
          archorpane.getChildren().add(zone);
          setAnchor(zone);
