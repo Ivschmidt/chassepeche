@@ -12,7 +12,7 @@ import javafx.collections.ObservableList;
  *
  * @author antho
  */
-public interface IDataManager
+public interface IDataManager{
 ObservableList<Zone> chargeZoneChasse(); 
 ObservableList<Zone> chargeZonePeche();
 ObservableList<Gibier> chargeGibier(String nom);
