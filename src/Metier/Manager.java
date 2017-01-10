@@ -68,6 +68,6 @@ public class Manager {
     
     public void chargeGibier(String nomZone){
         this.getListGibier().clear();
-        this.setListGibier(FabriqueChargement.chargeGibier(nomZone,stub));
+        this.setListGibier(stub.chargeGibier(nomZone));
     }
 }

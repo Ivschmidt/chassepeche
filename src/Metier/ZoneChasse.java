@@ -28,7 +28,7 @@ public class ZoneChasse extends Zone implements IZoneChasse{
     private final ListProperty<TypeChasse> typeChasseAutorise = new SimpleListProperty<>(
                                         FXCollections.observableArrayList());
     public ObservableList<TypeChasse> getTypeChasseAutorise() { return typeChasseAutorise.get(); }
-    private void setTypeChasseAutorise(ObservableList<TypeChasse> value) { typeChasseAutorise.set(value); }
+    public void setTypeChasseAutorise(ObservableList<TypeChasse> value) { typeChasseAutorise.set(value); }
     public ListProperty<TypeChasse> typeChasseAutoriseProperty() { return typeChasseAutorise; }
     
     /**
@@ -37,9 +37,10 @@ public class ZoneChasse extends Zone implements IZoneChasse{
     private final ListProperty<Gibier> gibier = new SimpleListProperty<>(
                                         FXCollections.observableArrayList());
     public ObservableList<Gibier> getGibier() { return gibier.get(); }
-    private void setGibier(ObservableList<Gibier> value) { gibier.set(value); }
+    public void setGibier(ObservableList<Gibier> value) { gibier.set(value); }
     public ListProperty<Gibier> gibierProperty() { return gibier; }
     
+    public ZoneChasse(){}
     
     /**
      * 
@@ -78,6 +79,10 @@ public class ZoneChasse extends Zone implements IZoneChasse{
         return super.toString() + ",\n type Chasse Autorise = " + mess + "\n Liste gibier : "+gib+"\n";
 
     }
+
+    
+
+    
     
        
     
