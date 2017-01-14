@@ -12,6 +12,9 @@ and open the template in the editor.
     -fx-border-color: black;
     
 }
+.Label{
+}
+
 .root {
     -fx-background-image: url("cerf.jpg");
     -fx-background-size: auto;

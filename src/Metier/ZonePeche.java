@@ -43,18 +43,7 @@ public class ZonePeche extends Zone implements IPeche{
     /**
      * prix du permis pour la zone 
      */
-    private final FloatProperty prixPermis = new SimpleFloatProperty();
-    public float getPrixPermis() { return prixPermis.get(); }
-    public void setPrixPermis(float value) { prixPermis.set(value); }
-    public FloatProperty prixPermisProperty() { return prixPermis; }
   
-    /**
-     * nombre de pêcheur de la zone
-     */
-    private final IntegerProperty nombrePecheur = new SimpleIntegerProperty();
-    public int getNombrePecheur() { return nombrePecheur.get(); }
-    private void setNombrePecheur(int value) { nombrePecheur.set(value); }
-    public IntegerProperty nombrePecheurProperty() { return nombrePecheur; }
 
     /**
      * 
@@ -64,10 +53,8 @@ public class ZonePeche extends Zone implements IPeche{
      * @param prix prix du permsi de pêche
      * @param nbPecheur nombre de pêcheur de la zone 
      */
-    public ZonePeche(String nom, String descriptif, TypeZone type,float prix,int nbPecheur) {
+    public ZonePeche(String nom, String descriptif, TypeZone type,int prix,int nbPecheur) {
         super(nom, descriptif, type,prix,nbPecheur);
-        this.setPrixPermis(prix);
-        this.setNombrePecheur(nbPecheur);
     }
     
     /**

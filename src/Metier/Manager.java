@@ -6,7 +6,9 @@
 package Metier;
 
 import javafx.beans.property.ListProperty;
+import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleListProperty;
+import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -16,19 +18,22 @@ import javafx.collections.ObservableList;
  */
 public class Manager {
 
-   private final ListProperty<Gibier> listGibier = new SimpleListProperty<>(
+   private final ListProperty<Gibier> listAnimaux = new SimpleListProperty<>(
         FXCollections.observableArrayList());
-    public ObservableList getListGibier() { return listGibier.get(); }
-    private void setListGibier(ObservableList value) { listGibier.set(value); }
-    public ListProperty listZoneGibiery() { return listGibier; }
+    public ObservableList getListAnimaux() { return listAnimaux.get(); }
+    private void setListAnimaux(ObservableList value) { listAnimaux.set(value); }
+    public ListProperty listZoneAnimauxy() { return listAnimaux; }
 
    private final ListProperty<Zone> listZone = new SimpleListProperty<>(
             FXCollections.observableArrayList());
    public ObservableList<Zone> getListZone() { return listZone.get(); }
    private void setListZone(ObservableList<Zone> value) { listZone.set(value); }
    public ListProperty<Zone> listZoneProperty() { return listZone; }
-   //Rajouter une propriété sur un Selected item 
+
    private final IDataManager stub;
+   
+   
+   
     
    /**
     * Co,nstructeur de manager
@@ -55,7 +60,12 @@ public class Manager {
     }
     
     public void chargeGibier(String nomZone){
-        this.getListGibier().clear();
-        this.setListGibier(stub.chargeGibier(nomZone));
+        this.getListAnimaux().clear();
+        this.setListAnimaux(stub.chargeGibier(nomZone));
     }
+    
+    /*public void chargePoisson(String nomZone){
+        this.getListAnimaux().clear();
+        this.setListAnimaux(stub.chargePoisson(nomZone));
+    }*/
 }

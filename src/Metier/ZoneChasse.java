@@ -50,7 +50,7 @@ public class ZoneChasse extends Zone implements IZoneChasse{
      * @param prix prix du permis pour cette zone
      * @param nbChasseur nombre de chasseur de la zone
      */
-    public ZoneChasse(String nom, String descriptif, TypeZone type,float prix,int nbChasseur) {
+    public ZoneChasse(String nom, String descriptif, TypeZone type,int prix,int nbChasseur) {
         super(nom, descriptif, type,prix,nbChasseur);        
     }
     /**

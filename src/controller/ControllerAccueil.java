@@ -18,9 +18,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.AnchorPane;
-import vue.ControlUCAccueil;
-import vue.ControlUCAnimal;
-import vue.ControlUCZone;
 
 
 /**
@@ -37,7 +34,7 @@ public class ControllerAccueil implements Initializable {
     
     
     
-    @FXML
+    
      public void BoutonAccueil(Event e){
         ControlUCAccueil u = new ControlUCAccueil();
         archorpane.getChildren().clear();
@@ -45,11 +42,10 @@ public class ControllerAccueil implements Initializable {
         setAnchor(u);
         
      }
-     
-     
+   
      public void BoutonChasse (Event e) {
          manager.chargeZoneChasse();
-         ControlUCZone zone = new ControlUCZone();
+         ControlUCZone zone = new ControlUCZone(manager,this);
          zone.setManager(manager);
          archorpane.getChildren().clear();
          archorpane.getChildren().add(zone);
@@ -59,7 +55,7 @@ public class ControllerAccueil implements Initializable {
      
        public void BoutonPeche (Event e) {
          manager.chargeZonePeche();
-         ControlUCZone zone = new ControlUCZone();
+         ControlUCZone zone = new ControlUCZone(manager,this);
          //zone.managedProperty().bind(observable);
          zone.setManager(manager);
          archorpane.getChildren().clear();

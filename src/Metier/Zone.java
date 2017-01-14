@@ -10,6 +10,7 @@ import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleFloatProperty;
 import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
@@ -39,18 +40,21 @@ public class Zone {
     /**
      * Cet attribut correpond à un des choix de l'énumération typeZone
      */
-    private TypeZone type;  
-    public TypeZone getType() {return type;}
-    public void setType(TypeZone type) {this.type = type;}
     
+    private final ObjectProperty<TypeZone> type1 = new SimpleObjectProperty<>();
+    public TypeZone getType1() { return type1.get(); }
+    public void setType1(TypeZone value) { type1.set(value); }
+    public ObjectProperty type1Property() { return type1; }
+    
+      
      /**
      * prix du permis pour la zone
      */
-    private final FloatProperty prixPermis = new SimpleFloatProperty();
-    public float getPrixPermis() { return prixPermis.get(); }
-    public void setPrixPermis(float value) { prixPermis.set(value); }
-    public FloatProperty prixPermisProperty() { return prixPermis; }
-    
+    private final IntegerProperty prixPermis = new SimpleIntegerProperty();
+    public int getPrixPermis() { return prixPermis.get(); }
+    public void setPrixPermis(int value) { prixPermis.set(value); }
+    public IntegerProperty prixPermisProperty() { return prixPermis;}
+      
     /**
      * nombre de pratiquant de la zone
      */
@@ -69,10 +73,10 @@ public class Zone {
      * @param prix prix du permis
      * @param nbParticipant nombre de participant
      */
-    public Zone(String nom,String descriptif,TypeZone type,float prix,int nbParticipant) {
+    public Zone(String nom,String descriptif,TypeZone type,int prix,int nbParticipant) {
         this.setNom(nom);
         this.setDescriptif(descriptif);
-        this.setType(type);
+        this.setType1(type);
         this.setPrixPermis(prix);
         this.setNombrePratiquant(nbParticipant);
     }
@@ -80,7 +84,7 @@ public class Zone {
     
     @Override
     public String toString() {
-        return "nom = " + this.getNom() + ",\n descriptif = " + getDescriptif() + ",\n type = " + this.getType().toString()+",\n prix Permis = " + this.getPrixPermis() + ",\n nombre pratiquant = "+ this.getNombrePratiquant();
+        return "nom = " + this.getNom() + ",\n descriptif = " + getDescriptif() + ",\n type = " + this.getType1().toString()+",\n prix Permis = " + this.getPrixPermis() + ",\n nombre pratiquant = "+ this.getNombrePratiquant();
     }
     
     
